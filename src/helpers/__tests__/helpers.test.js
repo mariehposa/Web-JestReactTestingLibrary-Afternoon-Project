@@ -28,6 +28,18 @@ describe('sum', () => {
 
 describe('multiply', () => {
   // write tests! <================================================
+  it('return null if fed no arguments', () => {
+    expect(() => helpers.multiply()).toThrow();
+  });
+  it('multiply positive numbers correctly', () => {
+    expect(helpers.multiply(2, 2)).toBe(4);
+  });
+  it('multiply negative number correctly', () => {
+    expect(helpers.multiply(-2, -2)).toBe(4);
+  });
+  it('throw if fed something which is not a number', () => {
+    expect(() => helpers.multiply('a', 'b')).toThrow();
+  });
 });
 
 describe('personMaker', () => {
@@ -40,5 +52,19 @@ describe('personMaker', () => {
       });
   });
 
-  // write more tests! <===========================================
+  expect( helpers.personMaker('me', 23)).toEqual({
+      id: '123',
+      name: 'me',
+      age: 23,
+  })
+
+  it('can increase person age', () => {
+    const newPerson = helpers.personMaker('me', 23)
+    newPerson.age += 2
+    expect(newPerson).toEqual({
+      id: '123',
+      name: 'me',
+      age: 25,
+    })
+  })
 });
