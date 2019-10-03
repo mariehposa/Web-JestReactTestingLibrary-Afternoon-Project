@@ -68,6 +68,10 @@ describe('Counter component', () => {
 
   it('prevents the count from going under a lower limit', () => {
     // implement
+    const decButton = tools.queryByTestId('decButton');
+
+    rtl.fireEvent.click(decButton);
+    expect(tools.queryByText(/-6/)).not.toBeInTheDocument();
   });
 
   it('shows a warning once we hit the upper limit of the counter', () => {
