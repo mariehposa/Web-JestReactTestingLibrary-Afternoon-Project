@@ -53,4 +53,12 @@ describe('personMaker', () => {
   });
 
   // write more tests! <===========================================
+  // it('makes a person with name and age', () => {
+  //   expect(helpers.personMaker('josh', 20))
+  //   .toMatchObject({
+  //     id: '456',
+  //     name: 'josh',
+  //     age: 20,
+  //   });
+  // });
 });
