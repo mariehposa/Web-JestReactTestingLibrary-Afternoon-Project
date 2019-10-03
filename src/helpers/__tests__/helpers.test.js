@@ -52,13 +52,20 @@ describe('personMaker', () => {
       });
   });
 
-  // write more tests! <===========================================
-  // it('makes a person with name and age', () => {
-  //   expect(helpers.personMaker('josh', 20))
-  //   .toMatchObject({
-  //     id: '456',
-  //     name: 'josh',
-  //     age: 20,
-  //   });
-  // });
+  const newPerson = helpers.personMaker('me', 23)
+  expect(newPerson).toEqual({
+      id: '123',
+      name: 'me',
+      age: 23,
+  })
+
+  it('can increase person age', () => {
+    const newPerson = helpers.personMaker('me', 23)
+    newPerson.age += 2
+    expect(newPerson).toEqual({
+      id: '123',
+      name: 'me',
+      age: 25,
+    })
+  })
 });
