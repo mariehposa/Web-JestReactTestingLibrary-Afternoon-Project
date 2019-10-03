@@ -52,8 +52,7 @@ describe('personMaker', () => {
       });
   });
 
-  const newPerson = helpers.personMaker('me', 23)
-  expect(newPerson).toEqual({
+  expect( helpers.personMaker('me', 23)).toEqual({
       id: '123',
       name: 'me',
       age: 23,
